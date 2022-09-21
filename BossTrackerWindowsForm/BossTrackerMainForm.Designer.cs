@@ -74,7 +74,7 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -95,6 +95,9 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 82);
             this.listBox1.Name = "listBox1";
@@ -112,6 +115,7 @@
             // 
             // bossFoughtInt
             // 
+            this.bossFoughtInt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bossFoughtInt.Location = new System.Drawing.Point(159, 133);
             this.bossFoughtInt.Name = "bossFoughtInt";
             this.bossFoughtInt.Size = new System.Drawing.Size(120, 20);
@@ -120,6 +124,7 @@
             // 
             // bossVictoryInt
             // 
+            this.bossVictoryInt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bossVictoryInt.Location = new System.Drawing.Point(312, 133);
             this.bossVictoryInt.Name = "bossVictoryInt";
             this.bossVictoryInt.Size = new System.Drawing.Size(120, 20);
@@ -128,6 +133,7 @@
             // 
             // beatenCheckBox
             // 
+            this.beatenCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.beatenCheckBox.AutoSize = true;
             this.beatenCheckBox.Location = new System.Drawing.Point(312, 170);
             this.beatenCheckBox.Name = "beatenCheckBox";
@@ -139,6 +145,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(159, 114);
             this.label2.Name = "label2";
@@ -148,6 +155,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(309, 114);
             this.label3.Name = "label3";
