@@ -117,6 +117,11 @@
             // 
             this.bossFoughtInt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bossFoughtInt.Location = new System.Drawing.Point(159, 133);
+            this.bossFoughtInt.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             this.bossFoughtInt.Name = "bossFoughtInt";
             this.bossFoughtInt.Size = new System.Drawing.Size(120, 20);
             this.bossFoughtInt.TabIndex = 3;
@@ -126,6 +131,11 @@
             // 
             this.bossVictoryInt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bossVictoryInt.Location = new System.Drawing.Point(312, 133);
+            this.bossVictoryInt.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             this.bossVictoryInt.Name = "bossVictoryInt";
             this.bossVictoryInt.Size = new System.Drawing.Size(120, 20);
             this.bossVictoryInt.TabIndex = 4;
