@@ -34,7 +34,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.bossListBox = new System.Windows.Forms.ListBox();
             this.bossNameLabel = new System.Windows.Forms.Label();
             this.bossFoughtInt = new System.Windows.Forms.NumericUpDown();
             this.bossVictoryInt = new System.Windows.Forms.NumericUpDown();
@@ -93,17 +93,19 @@
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // listBox1
+            // bossListBox
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bossListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 82);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(131, 121);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.bossListBox.FormattingEnabled = true;
+            this.bossListBox.Location = new System.Drawing.Point(12, 82);
+            this.bossListBox.Name = "bossListBox";
+            this.bossListBox.Size = new System.Drawing.Size(131, 121);
+            this.bossListBox.TabIndex = 1;
+            this.bossListBox.SelectedIndexChanged += new System.EventHandler(this.bossListBox_SelectedIndexChanged);
+            this.bossListBox.SelectedValueChanged += new System.EventHandler(this.bossListBox_SelectedValueChanged);
+            this.bossListBox.DoubleClick += new System.EventHandler(this.bossListBox_DoubleClick);
             // 
             // bossNameLabel
             // 
@@ -203,7 +205,7 @@
             this.Controls.Add(this.bossVictoryInt);
             this.Controls.Add(this.bossFoughtInt);
             this.Controls.Add(this.bossNameLabel);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.bossListBox);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -226,7 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox bossListBox;
         private System.Windows.Forms.Label bossNameLabel;
         private System.Windows.Forms.NumericUpDown bossFoughtInt;
         private System.Windows.Forms.NumericUpDown bossVictoryInt;

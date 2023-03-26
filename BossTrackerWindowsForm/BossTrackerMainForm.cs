@@ -15,6 +15,7 @@ namespace BossTrackerWindowsForm
     {
         BindingList<Boss> bosses { get; set; }
         BindingSource bindSource;
+        private changeBossName changeBossNameForm;
         public BossTrackerMainForm()
         {
             bosses = new BindingList<Boss>();
@@ -23,18 +24,6 @@ namespace BossTrackerWindowsForm
             bosses.RaiseListChangedEvents = true;
             bosses.AllowEdit = true;
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(listBox1.SelectedItems.Count > 0)
-            {
-                var selectedBoss = (Boss)listBox1.SelectedItem;
-                bossNameLabel.Text = selectedBoss.BossName;
-                bossFoughtInt.Value = selectedBoss.TimesFought;
-                bossVictoryInt.Value = selectedBoss.TimesWon;
-                beatenCheckBox.Checked = selectedBoss.VictoryAchieved;
-            }
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,20 +48,20 @@ namespace BossTrackerWindowsForm
                 streamReader.Close();
                 stream.Close();
 
-                listBox1.DataSource = bosses;
-                listBox1.DisplayMember = "bossName";
+                bossListBox.DataSource = bosses;
+                bossListBox.DisplayMember = "bossName";
             }
         }
 
         private void bossFoughtInt_ValueChanged(object sender, EventArgs e)
         {
-            var selectedBoss = (Boss)listBox1.SelectedItem;
+            var selectedBoss = (Boss)bossListBox.SelectedItem;
             selectedBoss.TimesFought = (int)bossFoughtInt.Value;
         }
 
         private void bossVictoryInt_ValueChanged(object sender, EventArgs e)
         {
-            var selectedBoss = (Boss)listBox1.SelectedItem;
+            var selectedBoss = (Boss)bossListBox.SelectedItem;
             selectedBoss.TimesWon = (int)bossVictoryInt.Value;
         }
 
@@ -81,8 +70,8 @@ namespace BossTrackerWindowsForm
             if (bossAddTextBox.Text != "" && !(bossAddTextBox.Text.Contains(',') || bossAddTextBox.Text.Contains(';')))
             {
                 bosses.Add(new Boss(bossAddTextBox.Text, 0, false, 0));
-                listBox1.DataSource = bosses;
-                listBox1.DisplayMember = "bossName";
+                bossListBox.DataSource = bosses;
+                bossListBox.DisplayMember = "bossName";
                 bossAddTextBox.Text = "";
                 bossAddTextBox.BackColor = Color.White;
             }
@@ -123,8 +112,30 @@ namespace BossTrackerWindowsForm
 
         private void beatenCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            var selectedBoss = (Boss)listBox1.SelectedItem;
+            var selectedBoss = (Boss)bossListBox.SelectedItem;
             selectedBoss.VictoryAchieved = (bool)beatenCheckBox.Checked;
+        }
+
+        private void bossListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bossListBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (bossListBox.SelectedItems.Count > 0)
+            {
+                changeBossNameForm = new changeBossName(bossListBox.Text.ToString());
+                changeBossNameForm.ShowDialog();
+                string newBossName = changeBossNameForm.BossName;
+                var selectedBoss = (Boss)bossListBox.SelectedItem;
+                selectedBoss.BossName = newBossName;
+            }
+        }
+
+        private void bossListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
