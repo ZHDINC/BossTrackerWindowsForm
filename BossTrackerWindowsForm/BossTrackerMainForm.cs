@@ -118,7 +118,14 @@ namespace BossTrackerWindowsForm
 
         private void bossListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (bossListBox.SelectedItems.Count > 0)
+            {
+                var selectedBoss = (Boss)bossListBox.SelectedItem;
+                bossNameLabel.Text = selectedBoss.BossName;
+                bossFoughtInt.Value = selectedBoss.TimesFought;
+                bossVictoryInt.Value = selectedBoss.TimesWon;
+                beatenCheckBox.Checked = selectedBoss.VictoryAchieved;
+            }
         }
 
         private void bossListBox_DoubleClick(object sender, EventArgs e)
